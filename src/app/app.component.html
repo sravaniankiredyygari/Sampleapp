@@ -1,0 +1,10 @@
+<div *ngFor="let item of faq; let i = index;">
+    <button #el class="accordion" (click)="toggleHelper(i)">
+        <slot name="header">{{ item.question }}</slot>
+    </button>
+    <div class="panel">
+        <slot name="details">
+            {{ item.answer }}
+        </slot>
+    </div>
+</div>
